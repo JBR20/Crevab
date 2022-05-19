@@ -1,0 +1,641 @@
+@font-face {
+    font-family: 'U8-Bold';
+    src: url('/piggyvestUI/fonts/U8-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DmSans-Medium';
+    src: url('/piggyvestUI/fonts/DMSans-Medium.ttf') format('truetype');
+}
+
+ :root {
+    --primary-color: hsl(211, 53%, 10%);
+    --primary-color-hover: hsl(225, 100%, 44%);
+    --secondary-color: hsl(300, 100%, 25%);
+    --white-color: hsl(0, 0%, 100%);
+    --grey-color: hsl(0, 0%, 21%);
+    --orange-color: hsl(39, 100%, 50%);
+    --blue-color: hsl(240, 82%, 40%);
+    --body-font: 'DmSans-Regular', 'sans-serif';
+    --header-font: 'Gilroy-Regular', sans-serif;
+    --btn-padding: 1rem 1.375rem;
+    --btn-border: thin solid hsl(17, 98%, 50%);
+    --border-radius: 0.625rem;
+}
+
+
+/* *****RESET CSS***** */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd ul {
+    margin: 0;
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+html {
+    font-family: var(--body-font);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* Set core root defaults */
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+
+/* Set core body defaults */
+
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+body:focus-within {
+    scroll-behavior: smooth;
+}
+
+
+/* Make images easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* GLOBAL STYLES */
+
+.container {
+    max-width: 72.8125rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    color: var(--white-color);
+    border-radius: var(--border-radius);
+}
+
+.btn--primary {
+    background-color: hsl(27, 98%, 48%);
+    color: var(--white-color);
+    transition: background-color .8s, color .8s;
+    -webkit-transition: background-color .8s, color .8s;
+    -moz-transition: background-color .8s, color .8s;
+}
+
+.btn--primary:hover {
+    background-color: lightblue;
+    color: var(--white-color);
+}
+
+.btn--outline {
+    position: relative;
+    top: 0.5px;
+    border: var(--btn-border);
+    color: var(--primary-color);
+    transition: all .8s;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+}
+
+.btn--primary-outline {
+    border: var(--btn-border);
+    color: var(--white-color);
+    transition: all .8s;
+}
+
+.btn--primary-outline:hover {
+    border: thin solid var(--primary-color-hover);
+    color: var(--primary-color-hover);
+}
+
+.btn--outline:hover {
+    border: thin solid var(--grey-color);
+    color: inherit;
+    top: -5px;
+}
+
+.btn.primary--color.btn--outline:hover {
+    background-color: var(--white-color);
+    color: var(--white-color);
+    transition: all .8s;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+}
+
+.btn--hover {
+    background-color: orangered;
+    color: var(--white-color);
+}
+
+.primary--color {
+    color: var(--primary-color);
+}
+
+.active {
+    color: var(--white-color);
+}
+
+.inline-block {
+    display: inline-block;
+    gap: 1.25rem;
+}
+
+.inline-block-5 {
+    display: inline-block;
+    gap: 2.25rem;
+}
+
+.mt-10 {
+    margin-top: 0.625rem;
+}
+
+.mt-20 {
+    margin-top: 1.25rem;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.orange {
+    color: var(--orange-color);
+}
+
+.blue {
+    color: var(--blue-color);
+}
+
+.white {
+    color: white;
+}
+
+.left {
+    margin-left: 200px;
+}
+
+.left-2 {
+    margin-left: 230px;
+}
+
+.left-3 {
+    margin-left: -50px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pt-80 {
+    padding-top: 80px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.pl-20 {
+    padding-left: 20px;
+}
+
+.pr-20 {
+    padding-right: 20px;
+}
+
+.oranges {
+    color: orangered;
+}
+
+
+/* *****************NAV SECTION****************************** */
+
+nav,
+.logo--side,
+.nav--list--items,
+.button--side {
+    outline: thin solid red;
+    display: flex;
+    align-items: center;
+    /* position: fixed; */
+}
+
+.button--side {
+    gap: 0.625rem;
+}
+
+.navbars::before {
+    outline: thin solid red;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 697px;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(230, 114, 6)), color-stop(66.5%, rgb(128, 41, 7)), color-stop(66.5%, #01061f), color-stop(94.5%, #020518), color-stop(94.5%, #03071d), color-stop(0, rgb(0, 2, 22)));
+    z-index: -1;
+}
+
+nav {
+    outline: thin solid red;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+nav .logo--side {
+    font-family: var(--header-font);
+    font-weight: 800;
+    gap: 5.8125rem;
+}
+
+nav .nav--list--items li:not(:last-child) {
+    padding-right: 2.8125rem;
+}
+
+nav .nav--list--items li a {
+    color: white;
+    font-family: 'DmSans-Medium';
+}
+
+nav .nav--list--items li a:hover {
+    color: orangered;
+    font-weight: bolder;
+}
+
+
+/* *****!Hero section!***** */
+
+.hero {
+    outline: thin solid red;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.hero--details {
+    background-color: hsl(320deg, 45%, 6%);
+    outline: thin solid red;
+    margin-top: 6.25rem;
+    flex-basis: 85%;
+}
+
+.hero--details h2 {
+    font-size: 3.5rem;
+    font-family: var(--header-font);
+    outline: thin solid red;
+    color: white;
+}
+
+.hero--details p {
+    outline: thin solid red;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.hero--buttons {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.hero--image {
+    outline: thin solid red;
+    position: relative;
+}
+
+.hero--image .first-img {
+    max-width: 450px;
+    z-index: -111;
+    left: 350%;
+    top: 300px;
+}
+
+.hero--image .hero-girl {
+    position: absolute;
+    top: -305px;
+    left: -1%;
+}
+
+.third-img,
+.fourth-img {
+    max-width: 300px;
+}
+
+.third-img {
+    position: absolute;
+    left: 60%;
+    top: -200px;
+}
+
+.fourth-img {
+    position: absolute;
+    right: 150px;
+    bottom: -450px;
+}
+
+
+/* SECURITY SECTION */
+
+.security {
+    outline: thin solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.125rem;
+    margin-top: 30px;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(168, 82, 0)), color-stop(66.5%, rgb(77, 32, 2)), color-stop(66.5%, #532003), color-stop(94.5%, #020518), color-stop(94.5%, #03071d), color-stop(0, rgb(0, 2, 22)));
+    z-index: -1;
+}
+
+.security .img--security {
+    outline: thin solid red;
+    max-width: 800px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+}
+
+.security .security--details {
+    outline: thin solid red;
+    background-color: hsl(320deg, 45%, 6%);
+    flex-basis: inherit;
+    margin-right: 1.5rem;
+}
+
+.security .security--details h2 {
+    outline: thin solid red;
+    font-family: var(--header-font);
+    margin-left: 6rem;
+    margin-top: 2rem;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+}
+
+.security .security--details p {
+    outline: thin solid red;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.security .security--details a {
+    outline: thin solid red;
+    position: relative;
+    margin-left: 27rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: black;
+    transition: all .5s ease-in-out;
+}
+
+.security .security--details a:hover::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 0.4375rem;
+    bottom: 0.625rem;
+    left: 0;
+    background-color: orangered;
+    z-index: -1;
+    opacity: .5;
+}
+
+.directors .container-2 {
+    outline: thin solid red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.125rem;
+    margin-top: 30px;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(168, 82, 0)), color-stop(66.5%, rgb(77, 32, 2)), color-stop(66.5%, #532003), color-stop(94.5%, #020518), color-stop(94.5%, #03071d), color-stop(0, rgb(0, 2, 22)));
+    z-index: -1;
+}
+
+h1::before {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: -5px;
+    z-index: -2;
+}
+
+h1::after {
+    content: '';
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.intro {
+    outline: thin solid red;
+    position: relative;
+    display: inline-block;
+    gap: 5rem;
+    margin-left: -15rem;
+}
+
+.intro::before,
+.intro::after {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+.intro::before {
+    background: white;
+    height: 101%;
+    left: -20px;
+    right: -20px;
+    z-index: -1;
+}
+
+.intro::after {
+    background: red;
+    width: 100vw;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    z-index: -2;
+    transform: translateX(-50%);
+}
+
+.card {
+    outline: thin solid red;
+    position: relative;
+    margin: 1rem;
+}
+
+.card-img {
+    outline: thin solid red;
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    transition: opacity ease-out 250ms;
+}
+
+.card-text {
+    outline: thin solid red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: orangered;
+    opacity: 0;
+    transition: opacity ease-out 250ms;
+}
+
+.card:hover .card-text {
+    opacity: 5;
+    margin-bottom: -3rem;
+}
+
+.card:hover .card-img {
+    opacity: .6;
+}
+
+.card::before,
+::after {
+    content: '';
+    position: absolute;
+}
+
+.card::before {
+    transform: scale(0, 1);
+    transition: transform ease-out 250ms;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.card:hover::after {
+    transform: scale(1, 1.05);
+}
+
+.card:hover::before {
+    transform: scale(1.05, 1);
+}
+
+.card-title {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0;
+}
+
+.footer {
+    outline: thin solid red;
+    gap: 3.125rem;
+    margin-top: 30px;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(168, 82, 0)), color-stop(66.5%, rgb(77, 32, 2)), color-stop(66.5%, #532003), color-stop(94.5%, #020518), color-stop(94.5%, #03071d), color-stop(0, rgb(0, 2, 22)));
+    z-index: -1;
+}
+
+.footer .footer-log {
+    outline: thin solid red;
+    display: flex;
+    padding: 10px;
+}
+
+.footer .footer-text {
+    outline: thin solid red;
+    text-align: center;
+    color: var(--white-color);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.footer-log {
+    outline: thin solid red;
+    align-items: center;
+    object-fit: fill;
+    justify-content: space-between;
+    background-color: rgba(255, 230, 230, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    gap: 100px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.footer .list-dash {
+    display: flex;
+    gap: 10rem;
+    list-style: none;
+    justify-content: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.copyright-info {
+    text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.list-dash a:hover {
+    color: var(--orange-color);
+    font-weight: 500;
+}

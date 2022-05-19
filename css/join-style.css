@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'U8-Bold';
+    src: url('/piggyvestUI/fonts/U8-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DmSans-Medium';
+    src: url('/piggyvestUI/fonts/DMSans-Medium.ttf') format('truetype');
+}
+
+ :root {
+    --primary-color: hsl(211, 53%, 10%);
+    --primary-color-hover: hsl(225, 100%, 44%);
+    --secondary-color: hsl(300, 100%, 25%);
+    --white-color: hsl(0, 0%, 100%);
+    --grey-color: hsl(0, 0%, 21%);
+    --orange-color: hsl(39, 100%, 50%);
+    --blue-color: hsl(240, 82%, 40%);
+    --body-font: 'DmSans-Regular', 'sans-serif';
+    --header-font: 'Gilroy-Regular', sans-serif;
+    --btn-padding: 1rem 1.375rem;
+    --btn-border: thin solid hsl(17, 98%, 50%);
+    --border-radius: 0.625rem;
+}
+
+
+/* *****RESET CSS***** */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd ul {
+    margin: 0;
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+html {
+    font-family: var(--body-font);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* Set core root defaults */
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+
+/* Set core body defaults */
+
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+
+/* Make images easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* GLOBAL STYLES */
+
+.container {
+    max-width: 72.8125rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    color: var(--white-color);
+    border-radius: var(--border-radius);
+}
+
+.btn--primary {
+    background-color: hsl(27, 98%, 48%);
+    color: var(--white-color);
+    transition: background-color .8s, color .8s;
+    -webkit-transition: background-color .8s, color .8s;
+    -moz-transition: background-color .8s, color .8s;
+}
+
+.btn--primary:hover {
+    background-color: var(--primary-color-hover);
+    color: var(--white-color);
+}
+
+.btn--outline {
+    position: relative;
+    top: 0.5px;
+    border: var(--btn-border);
+    color: var(--primary-color);
+    transition: all .8s;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+}
+
+.btn--primary-outline {
+    border: var(--btn-border);
+    color: var(--white-color);
+    transition: all .8s;
+}
+
+.btn--primary-outline:hover {
+    border: thin solid var(--primary-color-hover);
+    color: var(--primary-color-hover);
+}
+
+.btn--outline:hover {
+    border: thin solid var(--grey-color);
+    color: inherit;
+    top: -5px;
+}
+
+.btn.primary--color.btn--outline:hover {
+    background-color: var(--white-color);
+    color: var(--white-color);
+    transition: all .8s;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+}
+
+.btn--hover {
+    background-color: orangered;
+    color: var(--white-color);
+}
+
+.primary--color {
+    color: var(--primary-color);
+}
+
+.active {
+    color: var(--white-color);
+}
+
+.inline-block {
+    display: inline-block;
+    gap: 1.25rem;
+}
+
+.inline-block-5 {
+    display: inline-block;
+    gap: 2.25rem;
+}
+
+.mt-10 {
+    margin-top: 0.625rem;
+}
+
+.mt-20 {
+    margin-top: 1.25rem;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.orange {
+    color: var(--orange-color);
+}
+
+.blue {
+    color: var(--blue-color);
+}
+
+.left {
+    margin-left: 200px;
+}
+
+.left-2 {
+    margin-left: 230px;
+}
+
+.left-3 {
+    margin-left: 180px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pt-80 {
+    padding-top: 80px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.pl-20 {
+    padding-left: 20px;
+}
+
+.pr-20 {
+    padding-right: 20px;
+}
+
+.hero-images {
+    display: flex;
+}
+
+.log {
+    color: white;
+    font-weight: 650;
+    margin-left: 10px;
+}
+
+.main .container {
+    display: flex;
+    align-items: center;
+}
+
+.hero-image-2 .rightsidebar {
+    max-width: 800px;
+}
